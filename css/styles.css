@@ -90,11 +90,15 @@ header {
 /* --------------------------------------------------------- */
 
 nav a {
+    font-family: 'Montserrat', sans-serif; /* Fuente moderna y limpia */
+    font-size: 0.8em;
+    text-transform: uppercase; /* Transforma el texto a mayúsculas */
+    letter-spacing: 1px; /* Espacio entre letras */
     color: var(--color-background); /* Color Off-White para enlaces */
     text-decoration: none; /* Sin subrayado */
     margin-left: 25px;
-    font-weight: 500;
-    transition: color 0.3s; /* Transición suave al cambiar color (hover) */
+    font-weight: 600; /* Negrita para destacar */
+    transition: all 0.3s ease; /* Transición suave para hover */
     }
 
 nav a:hover,
