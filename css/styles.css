@@ -89,6 +89,13 @@ header {
 }
 /* --------------------------------------------------------- */
 
+nav {
+    /* Estilos para la barra de navegación */
+    display: flex;
+    align-items: center; /*Alinea verticalment con el logo*/
+    gap: 20px; /* Espacio entre los enlaces */
+}
+
 nav a {
     font-family: 'Montserrat', sans-serif; /* Fuente moderna y limpia */
     font-size: 0.8em;
@@ -96,7 +103,6 @@ nav a {
     letter-spacing: 1px; /* Espacio entre letras */
     color: var(--color-background); /* Color Off-White para enlaces */
     text-decoration: none; /* Sin subrayado */
-    margin-left: 25px;
     font-weight: 600; /* Negrita para destacar */
     transition: all 0.3s ease; /* Transición suave para hover */
     }
@@ -298,17 +304,23 @@ footer {
 /* "Si la pantalla mide 768px o menos (como un celular o tablet)..." */
 @media screen and (max-width: 768px) {
 
-    /* HEADER: Los encales se amontonan, asi que los ponemos uno abajo del otro. */
+    /* HEADER: Centramos el contenido */
     header {
         flex-direction: column; /* Cambia de fila a columna */
-        padding: 20px;
+        padding: 20px; /* Más espacio para que no se vea apretado */
+    }
+
+    nav {
+        width: 100%; /* Ocupa todo el ancho del header */
+        justify-content: center; /* Centra los enlaces */
+        margin-top: 15px;
+        gap: 10px; /* Reduce el espacio entre los enlaces */
+
     }
 
     nav a {
-        margin-top: 15px;
-        width: 100%;
-        display: flex;
-        justify-content: space-around; /* Reparte los botones en el ancho. */
+        margin-left: 0; /* IMPORTANTE: Elimina el margen que los empuja a la derecha */
+        font-size: 0.85rem;
     }
 
     /* HERO: El texto gigante del inicio ahora debe ser más pequeño */
