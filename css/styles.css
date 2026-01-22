@@ -1,0 +1,407 @@
+/* ----------------------------------------*/
+/* 1. RESET Y VARIABLES (Recomendado) */
+/* ----------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Hace que el padding y border se incluyan en el ancho total */
+}
+
+
+:root {
+    /* Nueva Paleta de Colores Balabits */
+    --color-primary: #BE3E82;    /* Magenta/Púrpura (Color principal) */
+    --color-secondary: #5E4352;  /* Berenjena Oscuro (Para textos y títulos) */
+    --color-accent: #E43F6F;     /* Rosa Intenso (Para botones y llamadas a la acción) */
+    --color-soft: #F56476;       /* Coral Suave (Para detalles y hovers) */
+    --color-light: #DFBBB1;      /* Rosado Nude (Para fondos suaves o bordes) */
+    --color-background: #FAFAFA; /* Off-white (Fondo de página) */
+    --color-white: #FFFFFF;      /* Blanco Puro (Tarjetas y contenedores) */
+    --color-text: #333333;       /* Gris casi negro para lectura */
+} 
+
+/* ----------------------------------------*/
+/* 2. ESTILOS GENERALES Y CUERPO */
+/* ----------------------------------------*/
+body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    /*background-color: var(--color-background); /* Fondo Off-White */
+    line-height: 1.6;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;  /* Altura minima de toda la pantalla */ 
+
+    /* -- Imagen de fondo -- */
+    background-image: url('../img/backgraund.png');
+    background-size: cover; /*cubre toda la pantalla sin deformarse */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /*Evita que la imagen se repita */
+    background-attachment: fixed; /*El continedo hace scroll, pero el fondo es fijo*/
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    line-height: 1.2;
+}
+
+/* Contenedor principal para central el contenido (OPcional, pero útil) */
+main {
+    background-color: transparent; /* Fondo transparente para ver la imagen de fondo */
+    box-shadow: none;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex: 1; /* Establece el espacio restante como flex */
+    width: 100%; /* Asegura el ancho total */
+}
+
+/* ----------------------------------------*/
+/* 3. CABECERA (HEADER) Y NAVEGACIÓN (NAV) */
+/* ----------------------------------------*/
+header {
+    background-color: var(--color-secondary); /* Marrón Oscuro */
+    color: white;
+    padding: 15px 50px;
+    display: flex; /* Para alinear el logo y la navegacion */
+    justify-content: space-between; /* Espacio entre el logo y el menú */
+    align-items: center; /* Alinear verticalmente */
+    width: 100%; /* Asegura el ancho total */
+}
+
+/* --- CAMBIO: Estilos para el nuevo Logo con Imagen --- */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;       /* Altura ideal para que no deforme el header */
+    width: auto;        /* Mantiene la proporción */
+    transition: transform 0.3s ease; /* Para que al pasar el mouse se mueva suave */
+}
+
+.logo img:hover {
+    transform: scale(1.05); /* Efecto de crecimiento sutil al tocarlo */
+}
+/* --------------------------------------------------------- */
+
+nav a {
+    color: var(--color-background); /* Color Off-White para enlaces */
+    text-decoration: none; /* Sin subrayado */
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s; /* Transición suave al cambiar color (hover) */
+    }
+
+nav a:hover,
+nav a.active {
+    color: var(--color-accent); /* Color Naranja al pasar el ratón */
+    }
+
+/* ----------------------------------------*/
+/* 4. SECCIÓN HERO (La primera vista) */
+/* ----------------------------------------*/
+#hero {
+    background-color: transparent;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: var(--color-secondary); /* Marrón Cálido */
+}
+
+#hero a {
+    margin-top: 20px;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.7); /* Sombra para destacar el botón */
+}
+
+#hero p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    color: var(--color-text);
+}
+
+/* Botón CTA (Call To Action) - ¡Rosa Vibrante Acento! */
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-accent); /* Rosa vibrante */
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--color-soft); /* al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* ----------------------------------------*/
+/* 5. PIE DE PÁGINA (FOOTER) */
+/* ----------------------------------------*/
+footer {
+    background-color: var(--color-secondary); /* Cambiado al Berenjena Oscuro */
+    color: var(--color-light); /* Un tono más suave para el texto del pie */
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    width: 100%; /* Asegura el ancho total */
+}
+
+/*-----------------------------------------*/
+/* 6. ESTILOS DE LA PÁGINA DE SERVICIOS */
+/*-----------------------------------------*/
+
+.services-intro {
+    text-align: center;
+    padding: 30px 0;
+}
+
+/* Contenedor Flex para las tarjetas */
+.service-cards-container {
+    display: flex;
+    gap: 30px; /* Espacio entre tarjetas */
+    justify-content: center;
+    flex-wrap: wrap; /* Permitir que las tarjetas se ajusten en pantallas pequeñas */
+}
+
+.service-card {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-top: 5px solid var(--color-primary); /* Barra superior del color primario */
+    padding: 30px;
+    width: calc(33% - 20px); /* Tres tarjetas por fila con espacio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.service-card .price {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--color-secondary);  /* Marrón Cálido */
+    margin-bottom: 20px;
+}
+
+.service-card ul {
+    list-style: none; /* Sin viñetas */
+    text-align: left;
+    margin-bottom: 25px;
+    padding: 0;
+}
+
+.service-card ul li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+    color: var(--color-text);
+}   
+
+/* Estilo especial para la tarjeta recomendada */
+.service-card.recommended {
+    border-top: 5px solid var(--color-accent); /* Barra superior Naranja */
+    background-color: #fffaf7; /* Fondo ligeramente diferente/tostado */
+}
+
+
+/*-----------------------------------------*/
+/* 7. ESTILOS DE FORMULARIO DE CONTACTO    */
+/*-----------------------------------------*/
+
+.contact-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 15px;
+
+    /* --- EFECTO CRISTAL --- */
+    background-color: rgba(255, 255, 255, 0.2); /* Blanco muy suave */
+    backdrop-filter: blur(10px);               /* El desenfoque que da el efecto cristal */
+    -webkit-backdrop-filter: blur(10px);       /* Soporte para Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borde sutil brillante */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;         /* Activamos Flexbox */
+    flex-direction: column; /* Ponemos el label ARRIBA y el input ABAJO */
+    align-items: flex-start; /* Alinea el texto del label a la IZQUIERDA del cuadro */
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--color-primary);
+    width: 100%; /* Asegura que el label use todo el ancho disponible */
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;       /* Los cuadros siempre ocuparán el 100% de la caja blanca */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: var(--font-body);
+    box-sizing: border-box; /* ¡MUY IMPORTANTE! Evita que el padding "estire" la caja hacia afuera */
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 5px rgba(231, 111, 81, 0.2);
+}
+
+/* Estilo para que el botón ocupe todo el ancho */
+#contact-form button {
+    width: 100%;
+    cursor: pointer;
+    border: none;
+}
+
+
+/*-----------------------------------------*/
+/* 8. RESPONSIVE DESIGN (MEDIA QUERIES)    */
+/*-----------------------------------------*/
+
+/* "Si la pantalla mide 768px o menos (como un celular o tablet)..." */
+@media screen and (max-width: 768px) {
+
+    /* HEADER: Los encales se amontonan, asi que los ponemos uno abajo del otro. */
+    header {
+        flex-direction: column; /* Cambia de fila a columna */
+        padding: 20px;
+    }
+
+    nav a {
+        margin-top: 15px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around; /* Reparte los botones en el ancho. */
+    }
+
+    /* HERO: El texto gigante del inicio ahora debe ser más pequeño */
+    #hero h1 {
+        font-size: 2em; /* Bajamos de 3em a 2em para que no se corte */
+    }
+
+    /* SERVICIOS: ¡Este es el cambio más importante! */
+    .service-cards-container {
+        flex-direction: column; /* Las 3 tarjetas ya no caben de lado, van hacia abajo */
+        align-items: center;
+    }
+    .service-card {
+        width: 90%; /* Ahora cada tarjeta ocupa casi todo el ancho del celular */
+        margin-bottom: 20px;
+    }
+
+    /* CONTACTO: Ajustamos el margen para que no se vea pegado a los bordes */
+    .contact-container {
+        width: 95%;
+        padding: 20px;
+        margin-top: 20px auto;
+    }
+}
+
+
+
+/*-----------------------------------------*/
+/* 9. ESTILOS PÁGINA "SOBRE NOSOTROS"      */
+/*-----------------------------------------*/
+
+#about-hero {
+    background-color: var(--color-background);
+    padding: 60px;
+    text-align: center;
+}
+
+#about-hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: var(--color-secondary);
+}
+
+.about-content-section {
+    padding: 40px 20px;
+    background-color: white; /*Fondo blanco para el contenido preincipal */
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px; /*Espacio entre texto y la imagen*/
+    align-items: center; /* ALineacion verticar al centro*/
+    flex-wrap: wrap; /*Permite que las columnas se apilen en móviles*/
+}
+
+.about-text {
+    flex: 1; /*Ocupa el espacio disponible*/
+    min-width: 300px; /* Ancho minimo para que el texto no se comprima demasiado*/
+    color: var(--color-text);
+}
+
+.about-text h3 {
+    font-size: 2em;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.about-image {
+    flex: 1; /* Ocupa el espacio disponible */
+    min-width: 300px; /* Ancho minimo para la imagen */
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%; /* La imagen no excederá el ancho de su contenedor.*/
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* RESPONSIVE PARA LA SECCIÓN "Sobre Nosotros" */
+
+@media screen and (max-width: 768px) {
+    .about-container{
+        flex-direction: column; /* Apilas columnas */
+        gap: 30px;
+    }
+
+    .about-text, .about-image {
+        min-width: unset; /* Quita el ancho minimo para que se ajusten mejor*/
+        width: 100%;
+    }
+}
