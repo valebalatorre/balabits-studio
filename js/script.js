@@ -2,6 +2,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     const formulario = document.getElementById('contact-form');
 
+
+    //Actualizar copyright automáticamente
+    const copyrightParagraph = document.querySelector('footer p');
+    if (copyrightParagraph) {
+            const year = new Date().getFullYear();
+            copyrightParagraph.innerHTML = `&copy; ${year} BALABITS STUDIO. Todos los derechos reservados.`;
+
+    }
+
     // Verificamos que el formulario exista en la página actual
     if (formulario) {   
         formulario.addEventListener('submit', (evento) => {
@@ -32,13 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         Tu mensaje ha sido recibido con éxito. Nos pondremos en contacto con vos a tu correo <strong>${email}</strong> muy pronto para empezar a trabajar en tu proyecto.
                     </p>
                     <button onclick="location.reload()" class="cta-button">
-                        Enviar otro mensaje
+                        Enviar otra consulta
                     </button>
                 </div>
             `;
             
             // Opcional: Mostrar en consola para verificar que los datos se capturaron bien
-            console.log("Formulario enviado por:", nombre, email);
+            console.log("Formulario enviado por:", nombre, email, mensaje);
         });
     }
 });
