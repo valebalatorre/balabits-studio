@@ -28,6 +28,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
+                    //Preparamos los datos para enviar
+            const datos = new FormData(formulario);
+                    
+                    // Enviamos a Formspree usando FETCH
+            fetch("https://formspree.io/f/mpqdbyle", {
+                method: "POST",
+                body: datos,
+                headers: {
+                    'accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    //SI TODO SALE BIEN: Mostramos el mensaje de éxito
+                    const contenedor = document.querySelector('.contact-container');
+                    contenedor.innerHTML = `
+                        <div style="text-align: center; padding: 20px;">
+                            <h2 style="color: var(--color-primary); margin-bottom: 15px;">¡Gracias, ${nombre}!</h2>
+                            <p style="margin-bottom: 25px; color: var(--color-text);">Tu mensaje ha sido enviado con éxito. Revisaremos tu consulta sobre el servicio de <strong>${servicio}</strong> y te escribiremos a <strong>${email}</strong>.</p>
+                            <button onclick="location.reload()" class="cta-button">Enviar otro mensaje</button>
+                        </div>
+                    `;
+                } else {
+                    // SI HAY ERROR
+                    alert("Hubo un problema con el servidor. Por favor, intenta más tarde.");
+                }
+            });
+
             // 4. Seleccionamos el contenedor de cristal para mostrar el mensaje de éxito
             const contenedor = document.querySelector('.contact-container');
 
