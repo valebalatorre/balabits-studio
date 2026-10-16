@@ -1,0 +1,11 @@
+{
+  "name": "Balabits Studio",
+  "short_name": "Balabits",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#E5633E",
+  "background_color": "#FFF8F2",
+  "display": "standalone"
+}
